@@ -118,5 +118,15 @@ elements.pagesView.addEventListener('click', (e) => {
     }
 });
 
+/////============Clear the HomePage when the btn is clicked
+elements.bgPage.addEventListener('click', (e) => {
+    const bg__Element = e.target.parentElement;
+    bg__Element.style.transform = 'translateY(-100%)';
+    bg__Element.style.transition = 'all 1s ease-in-out';
+    setTimeout(() => {
+        e.target.parentElement.remove();
+    }, 2000);
+    listItem();
+});
 ////---- Loads the items of concern on window load
-window.addEventListener('load', listItem);
+// window.addEventListener('load', listItem);

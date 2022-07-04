@@ -18,6 +18,54 @@
 body {
     font-weight: 300;
     background-color: #fcfafb;
+    position: relative;
+}
+
+.bg-container {
+    background-color: rgb(248, 227, 218);
+    position: absolute;
+    top: -4rem;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bg-homepage h1 {
+    margin-top: -10rem;
+    font-size: 15rem;
+    letter-spacing: 10px;
+    font-family: 'Shadows Into Light', cursive, sans-serif;
+    margin-bottom: 3rem;
+}
+
+.bg-homepage p {
+    font-size: 3rem;
+    color: rgb(110, 110, 110);
+    font-family: fantasy;
+    word-spacing: 5px;
+}
+
+.btn-main-page {
+    position: absolute;
+    top: 8rem;
+    right: 5rem;
+    z-index: 29;
+    border: none;
+    background-color: darksalmon;
+    padding: 1.8rem 2.5rem;
+    border-radius: 5rem;
+    transition: all 0.4s;
+}
+
+.btn-main-page:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.2rem);
 }
 
 html {
