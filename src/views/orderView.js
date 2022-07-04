@@ -1,4 +1,4 @@
-import { elements } from "./base"
+import { elements } from './base';
 export const orderView = (orderItem) => {
     let html = `
     <div class="cartout-cards" data-order="${orderItem.id}">
@@ -24,16 +24,29 @@ export const orderView = (orderItem) => {
         <div class="cart-amount">${orderItem.newPrice}</div>
     </div>
 </div>
-    `
-        /// Insert Adjascent HTML here
+    `;
+    /// Insert Adjascent HTML here
 
-    elements.order.insertAdjacentHTML('beforeend', html)
-}
+    elements.order.insertAdjacentHTML('beforeend', html);
+};
 export const deleteOrderView = (item) => {
-    item.remove()
-}
+    deleteTransition(item);
+    // item.remove();
+    setInterval(() => {
+        item.remove();
+    }, 1300);
+};
 export const updateViewCounter = (el, target) => {
-    target.parentElement.parentElement.parentElement.nextElementSibling.querySelector('.cart-amount').textContent = el.newPrice
-    target.textContent = el.count
+    target.parentElement.parentElement.parentElement.nextElementSibling.querySelector(
+        '.cart-amount'
+    ).textContent = el.newPrice;
+    target.textContent = el.count;
+};
 
-}
+//=====Adds transition to help delete
+const deleteTransition = (item) => {
+    item.style.transform = 'translateX(50rem)';
+    item.style.opacity = '0';
+    item.style.transition = 'all 2s ease-in-out';
+};
+const addInTransition = () => {};

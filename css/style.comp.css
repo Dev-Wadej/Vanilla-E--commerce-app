@@ -17,8 +17,7 @@
 
 body {
     font-weight: 300;
-    background-color: #FCFAFB;
-    ;
+    background-color: #fcfafb;
 }
 
 html {
@@ -103,13 +102,30 @@ html {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     padding-bottom: 2rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.cart-card:hover {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.cart-card .cart-img {
+    transition: all 2s ease-in-out;
+}
+
+.cart-card:hover .cart-img {
+    overflow: hidden;
+    transform: scale(1.2) translateY(-2rem);
 }
 
 .card-title {
     margin-top: 1rem;
-    margin-bottom: .7rem;
+    margin-bottom: 0.7rem;
     width: 90%;
     text-align: center;
+    transition: all 1s;
 }
 
 .cart-img {
@@ -123,6 +139,8 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     gap: 4rem;
+    overflow: hidden;
+    padding-bottom: 2rem;
 }
 
 .divider {
@@ -162,6 +180,10 @@ html {
     text-align: center;
 }
 
+.cart-content-delete {
+    cursor: pointer;
+}
+
 .cartout-img {
     width: 6rem;
     height: 7rem;
@@ -175,8 +197,8 @@ html {
 
 .check-mark {
     background-color: var(--light-orange);
-    padding: .6rem 2.5rem;
-    border-radius: .3rem;
+    padding: 0.6rem 2.5rem;
+    border-radius: 0.3rem;
 }
 
 .cartout-quantity {
@@ -202,6 +224,11 @@ html {
     margin-right: 3.8rem;
 }
 
+.counter-plus,
+.counter-minus {
+    cursor: pointer;
+}
+
 .counter {
     position: relative;
 }
@@ -218,6 +245,7 @@ html {
     height: fit-content;
     padding-bottom: 2rem;
     margin-top: 3rem;
+    transition: background-color 2s;
 }
 
 .cartout-cards {
@@ -228,19 +256,19 @@ html {
 /* Button  Styles */
 
 .btn-inline {
-    color: #E05214;
+    color: #e05214;
     font-size: 1.2rem;
     border: none;
     background-color: #eed9d0;
-    padding: .8rem 1.2rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 10rem;
     cursor: pointer;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .btn-inline:hover {
     color: #eed9d0;
-    background-color: #E05214;
+    background-color: #e05214;
 }
 
 .btn-inline:focus {
@@ -263,4 +291,26 @@ html {
 .results__btn--prev {
     display: flex;
     flex-direction: row-reverse;
+}
+
+
+/* Styling the spinner here */
+
+#styleSpinner {
+    margin-top: 20rem;
+    font-size: 9rem;
+    color: #e05214;
+    width: fit-content;
+    height: fit-content;
+    transform-origin: center;
+    animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
