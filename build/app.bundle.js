@@ -2940,7 +2940,8 @@ var elements = exports.elements = {
     list: document.querySelector('.main-col'),
     order: document.querySelector('.right-col'),
     viewCount: document.querySelectorAll('.counter-num'),
-    pagesView: document.querySelector('.paginate')
+    pagesView: document.querySelector('.paginate'),
+    bgPage: document.querySelector('.btn-main-page')
 };
 
 /***/ }),
@@ -9634,8 +9635,18 @@ _base.elements.pagesView.addEventListener('click', function (e) {
     }
 });
 
+/////============Clear the HomePage when the btn is clicked
+_base.elements.bgPage.addEventListener('click', function (e) {
+    var bg__Element = e.target.parentElement;
+    bg__Element.style.transform = 'translateY(-100%)';
+    bg__Element.style.transition = 'all 1s ease-in-out';
+    setTimeout(function () {
+        e.target.parentElement.remove();
+    }, 2000);
+    listItem();
+});
 ////---- Loads the items of concern on window load
-window.addEventListener('load', listItem);
+// window.addEventListener('load', listItem);
 
 /***/ }),
 /* 335 */
