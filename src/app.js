@@ -69,12 +69,14 @@ elements.order.addEventListener('click', (e) => {
     if (e.target.closest('.cart-content-delete')) {
         const selectedData =
             e.target.parentElement.parentElement.parentElement;
+        if (selectedData.className === 'top-cartout')
+            deleteOrderView(selectedData.parentElement);
         if (state.order)
             state.order.deleteItem(selectedData.dataset.order);
         deleteOrderView(selectedData);
     }
 
-    ////============================================
+    ////==================================================
 
     let selectedForUpdate;
 
@@ -128,5 +130,3 @@ elements.bgPage.addEventListener('click', (e) => {
     }, 2000);
     listItem();
 });
-////---- Loads the items of concern on window load
-// window.addEventListener('load', listItem);

@@ -49,4 +49,3 @@ const deleteTransition = (item) => {
     item.style.opacity = '0';
     item.style.transition = 'all 2s ease-in-out';
 };
-const addInTransition = () => {};

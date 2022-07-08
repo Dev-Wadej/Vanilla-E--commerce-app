@@ -52,7 +52,6 @@ const renderButtons = (totalPages, page) => {
 ////=======  Pagination of just 6 items per page and as well renders the list to  the listView
 export const pagination = (contents, page = 1, resPerPage = 6) => {
     const pages = Math.ceil(contents.length / resPerPage);
-    console.log(page);
     const start = (+page - 1) * resPerPage;
     const end = +page * resPerPage;
 

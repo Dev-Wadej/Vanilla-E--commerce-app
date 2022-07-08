@@ -4,4 +4,5 @@ export const elements = {
     viewCount: document.querySelectorAll('.counter-num'),
     pagesView: document.querySelector('.paginate'),
     bgPage: document.querySelector('.btn-main-page'),
+    arrowBack: document.querySelector('.checkout-arrow'),
 };
