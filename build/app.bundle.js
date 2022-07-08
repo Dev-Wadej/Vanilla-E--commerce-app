@@ -2941,7 +2941,8 @@ var elements = exports.elements = {
     order: document.querySelector('.right-col'),
     viewCount: document.querySelectorAll('.counter-num'),
     pagesView: document.querySelector('.paginate'),
-    bgPage: document.querySelector('.btn-main-page')
+    bgPage: document.querySelector('.btn-main-page'),
+    arrowBack: document.querySelector('.checkout-arrow')
 };
 
 /***/ }),
@@ -9591,11 +9592,12 @@ _base.elements.list.addEventListener('click', function (e) {
 _base.elements.order.addEventListener('click', function (e) {
     if (e.target.closest('.cart-content-delete')) {
         var selectedData = e.target.parentElement.parentElement.parentElement;
+        if (selectedData.className === 'top-cartout') (0, _orderView.deleteOrderView)(selectedData.parentElement);
         if (state.order) state.order.deleteItem(selectedData.dataset.order);
         (0, _orderView.deleteOrderView)(selectedData);
     }
 
-    ////============================================
+    ////==================================================
 
     var selectedForUpdate = void 0;
 
@@ -9645,8 +9647,6 @@ _base.elements.bgPage.addEventListener('click', function (e) {
     }, 2000);
     listItem();
 });
-////---- Loads the items of concern on window load
-// window.addEventListener('load', listItem);
 
 /***/ }),
 /* 335 */
@@ -9994,7 +9994,6 @@ var pagination = exports.pagination = function pagination(contents) {
     var resPerPage = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 6;
 
     var pages = Math.ceil(contents.length / resPerPage);
-    console.log(page);
     var start = (+page - 1) * resPerPage;
     var end = +page * resPerPage;
 
@@ -10048,7 +10047,6 @@ var deleteTransition = function deleteTransition(item) {
     item.style.opacity = '0';
     item.style.transition = 'all 2s ease-in-out';
 };
-var addInTransition = function addInTransition() {};
 
 /***/ })
 /******/ ]);
